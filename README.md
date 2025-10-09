@@ -1,59 +1,163 @@
-# CaremonitorApp
+## CareMonitor Angular App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+A sample Angular application demonstrating login, authentication, dashboard, and list page with mock API integration.
 
-## Development server
+---
 
-To start a local development server, run:
+## Table of Contents
 
-```bash
-ng serve
-```
+- [Overview](#overview)  
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Project Structure](#project-structure)  
+- [Setup Instructions](#setup-instructions)  
+- [Running the Application](#running-the-application)
+- [Architecture & Approach](#architecture--approach)  
+- [Testing](#testing)  
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Overview
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+CareMonitor is a demo Angular application built as part of an interview assignment. The app demonstrates:  
 
-```bash
-ng generate component component-name
-```
+- User login and authentication  
+- Dashboard displaying logged-in user details  
+- List page fetching items via a mock API  
+- State management using Angular Component Store  
+- Mock API using HTTP interceptor  
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Features
 
-## Building
+1. **Login Page**  
+   - Reactive form with email and password  
+   - Authentication using mock API  
+   - Stores token and email in cookies  
+   - Redirects to dashboard on successful login  
 
-To build the project run:
+2. **Dashboard Page**  
+   - Displays logged-in user’s email  
+   - Navigation to List page  
+   - Logout button clears cookies  
 
-```bash
-ng build
-```
+3. **List Page**  
+   - Fetches items from mock API  
+   - Handles loading and error states  
+   - Uses Angular Component Store for state management  
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+4. **Mock API Integration**  
+   - Implemented using HTTP Interceptor  
+   - `/api/login` and `/api/items` return mock data  
 
-## Running unit tests
+5. **Loader & UX**  
+   - Loading spinner during API calls  
+   - Transparent overlay while loading  
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
+## Tech Stack
+
+- Angular 20+ (Standalone Components)  
+- Angular Material  
+- RxJS  
+- @ngrx/component-store  
+- ngx-cookie-service  
+
+---
+
+## Project Structure
+
+src/app/
+├── auth/
+| ├── login/
+| │ ├── login.html
+| │ ├── login.scss
+| │ ├── login.spec.ts
+| │ ├── login.ts
+│ ├── auth.spec.ts
+│ ├── auth.ts
+│ ├── auth.guard.spec.ts
+│ ├── auth.guard.ts
+├── dashboard/
+│ ├── dashboard.html
+│ ├── dashboard.scss
+│ ├── dashboard.spec.ts
+│ ├── dashboard.ts
+├── list/
+│ ├── list.html
+│ ├── list.scss
+│ ├── list.spec.ts
+│ ├── list.ts
+│ ├── list.store.spec.ts
+│ ├── list.store.ts
+├── mocks/
+│ ├── mock-api.interceptor.spec.ts
+│ ├── mock-api.interceptor.ts
+├── services/
+│ ├── item.spec.ts
+│ ├── item.ts
+├── app.config.ts
+├── app.html
+├── app.rutes.ts
+├── app.scss
+├── app.spec.ts
+├── app.ts
+
+---
+
+## Setup Instructions
+
+1. Clone the repository
+
+git clone https://github.com/MohiniReddiwar/caremonitor-app.git
+cd caremonitor-app
+
+2. Install dependencies
+
+npm install
+
+3. Run the application
+
+Run the application
+
+Open your browser at http://localhost:4200
+
+---
+
+## Architecture & Approach
+
+> Standalone Components: Each component has its own template, style, and imports, making the app modular and reusable.
+
+> State Management: ListStore (Angular Component Store) handles items, loading, and error state for the List page.
+
+> Authentication:
+
+    1. Auth service handles login, logout, token storage, and user info in cookies
+
+    2. AuthGuard protects routes for authenticated users only
+
+> Mock API: HTTP Interceptor simulates /api/login and /api/items responses, so backend is not required.
+
+> Reactive Forms: Login form uses Angular reactive forms with validation.
+
+> Angular Material: For consistent UI and responsive layout.
+
+> Testing: Unit tests cover services, stores, and components. Router and HTTP calls are mocked for reliable tests.
+
+---
+
+## Testing
+
+Run unit tests:
+
 ng test
-```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## License
 
-```bash
-ng e2e
-```
+MIT License
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

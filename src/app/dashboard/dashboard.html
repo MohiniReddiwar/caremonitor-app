@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="dashboard-toolbar">
+  <span class="toolbar-title">CareMonitor Dashboard</span>
+  <button mat-button class="logout-btn" (click)="logout()">Logout</button>
+</mat-toolbar>
+
+<div class="dashboard-container">
+  <mat-card class="dashboard-card">
+    <mat-card-content>
+      <h2>Welcome, {{ userEmail }}</h2>
+      <p>
+        <a mat-raised-button color="accent" routerLink="/list">Go to List Page</a>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
