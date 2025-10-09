@@ -69,41 +69,7 @@ CareMonitor is a demo Angular application built as part of an interview assignme
 
 ## Project Structure
 
-src/app/
-├── auth/
-| ├── login/
-| │ ├── login.html
-| │ ├── login.scss
-| │ ├── login.spec.ts
-| │ ├── login.ts
-│ ├── auth.spec.ts
-│ ├── auth.ts
-│ ├── auth.guard.spec.ts
-│ ├── auth.guard.ts
-├── dashboard/
-│ ├── dashboard.html
-│ ├── dashboard.scss
-│ ├── dashboard.spec.ts
-│ ├── dashboard.ts
-├── list/
-│ ├── list.html
-│ ├── list.scss
-│ ├── list.spec.ts
-│ ├── list.ts
-│ ├── list.store.spec.ts
-│ ├── list.store.ts
-├── mocks/
-│ ├── mock-api.interceptor.spec.ts
-│ ├── mock-api.interceptor.ts
-├── services/
-│ ├── item.spec.ts
-│ ├── item.ts
-├── app.config.ts
-├── app.html
-├── app.rutes.ts
-├── app.scss
-├── app.spec.ts
-├── app.ts
+<pre> ```text src/app/ ├── auth/ │ ├── login/ │ │ ├── login.html │ │ ├── login.scss │ │ ├── login.spec.ts │ │ ├── login.ts │ ├── auth.spec.ts │ ├── auth.ts │ ├── auth.guard.spec.ts │ ├── auth.guard.ts ├── dashboard/ │ ├── dashboard.html │ ├── dashboard.scss │ ├── dashboard.spec.ts │ ├── dashboard.ts ├── list/ │ ├── list.html │ ├── list.scss │ ├── list.spec.ts │ ├── list.ts │ ├── list.store.spec.ts │ ├── list.store.ts ├── mocks/ │ ├── mock-api.interceptor.spec.ts │ ├── mock-api.interceptor.ts ├── services/ │ ├── item.spec.ts │ ├── item.ts ├── app.config.ts ├── app.html ├── app.routes.ts ├── app.scss ├── app.spec.ts ├── app.ts ``` </pre>
 
 ---
 
